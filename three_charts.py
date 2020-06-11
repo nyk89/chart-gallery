@@ -58,6 +58,25 @@ print(line_data) # TODO: create a line graph based on the line_data
 import plotly
 import plotly.graph_objs as go
 
+c = []
+m = []
+
+for p in pie_data:
+    c.append(p["company"])
+    m.append(p["market_share"])
+
+labels = c
+values = m
+
+trace = go.Pie(labels=labels, values=values)
+
+plotly.offline.plot([trace], filename="basic_pie_chart.html", auto_open=True)
+
+
+
+import plotly
+import plotly.graph_objs as go
+
 x = []
 y = []
 
